@@ -1,14 +1,15 @@
 import { Response, Request } from "express";
 import { Gets } from "../../repository/orderDetailsRepository/GetsOrderDetails.Repository";
-import { Existences } from "../../helpers/validateExisences/Existences.helper";
+import { Existences } from "../../helpers/validateExisences/Existences.Helper";
 import { validateToken } from "../../middleware/ValidateToken/ValidateToken";
 
 
 export async function getOrdersDetails(req: Request, res: Response): Promise<Response> {
     try {
-        const accessToken = req.headers['authorization'];
+        const tokenCookie = req.cookies.token1;
         // Validar el token
-        await validateToken(accessToken);
+        await validateToken(tokenCookie);
+
         const ordersDetails = await Gets();
         await Existences(ordersDetails);
         return res.json(ordersDetails);

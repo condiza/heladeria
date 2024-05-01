@@ -1,6 +1,6 @@
 import { Response,Request } from "express";
 import { Get } from "../../repository/toppingsRepository/GetTopping.Repository";
-import { Existences } from "../../helpers/validateExisences/Existences.helper";
+import { Existences } from "../../helpers/validateExisences/Existences.Helper";
 
 export async function getTopping (req:Request,res:Response): Promise<Response>{
     try {

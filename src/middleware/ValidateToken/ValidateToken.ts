@@ -4,7 +4,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 export async function validateToken(accessToken: string | undefined): Promise<void> {
-    const secret = process.env.SECRET ?? 'SECRET' 
+    const secret = process.env.SECRET ?? 'SECRET' ;
     if (!accessToken) {
         throw new Error('Access denied');
     }

@@ -1,6 +1,9 @@
 import express, { Application } from 'express';
 import morgan from 'morgan';
 
+//cookies
+import cookieParser from 'cookie-parser';
+
 //Rooutes
 import indexRoutes from './routes/index.routes';
 import flavorsRoutes from './routes/flavors.routes';
@@ -8,7 +11,8 @@ import usersRoutes from './routes/user.routes';
 import toppingRoutes from './routes/toppings.routes';
 import ordersRoutes from './routes/orders.routes';
 import ordersDetailsiRoutes from './routes/order_details.routes';
-import authRoutes from './routes/auth.routes'
+import authRoutes from './routes/auth.routes';
+import changePasswordRoutes from './routes/changePassword.routes';
 
 export class App{
 
@@ -35,6 +39,8 @@ export class App{
         this.app.use(morgan('dev'));
         //esta linea nos ayuda para definir que vamos a resivir cosultas de tipo json 
         this.app.use(express.json());
+        //cookies
+        this.app.use(cookieParser());
     }
 
     //Routes 
@@ -45,7 +51,8 @@ export class App{
         this.app.use('/topping',toppingRoutes);
         this.app.use('/orders',ordersRoutes);
         this.app.use('/ordersdetails',ordersDetailsiRoutes);
-        this.app.use('/auth',authRoutes)
+        this.app.use('/auth',authRoutes);
+        this.app.use('/changepassword',changePasswordRoutes);
     }
 
 

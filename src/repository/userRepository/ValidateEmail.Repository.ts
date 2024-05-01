@@ -11,7 +11,6 @@ export async function ValidateEmail(email_U: string){
     if (userAsArray && userAsArray.length > 0) {
       return userAsArray[0]; 
     }
-
     return null; 
   } catch (error) {
     console.error('Error while validating email:', error);

@@ -1,6 +1,6 @@
 import { Request,Response } from "express";
 import { Get } from "../../repository/userRepository/GetUser.Repository";
-import { Existences } from "../../helpers/validateExisences/Existences.helper";
+import { Existences } from "../../helpers/validateExisences/Existences.Helper";
 
 
 export async function getUser(req: Request, res: Response): Promise<Response> {
