@@ -5,6 +5,6 @@ import { validator, validatorParams } from '../middleware/auth/auth';
 const routes = Router();
 
 routes.route('/')
-    .post(validator,validatorParams, authValidate)
+    .post(validatorParams,validator, authValidate)
 
 export default routes;

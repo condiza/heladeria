@@ -1,10 +1,10 @@
 import { Request, Response, NextFunction } from 'express';
-const { check, validationResult } = require('express-validator');
+import { check, validationResult } from 'express-validator';
 
-let validatorParams = [
-  check('email_U').isEmail(),
-  check('password_U').isLength({ min: 8, max: 15})
-];
+const validatorParams = [
+  check('email_U').isEmail().withMessage('El email es incorrecto'),
+  check('password_U').isLength({ min: 8, max: 15 }).withMessage('La contraseña es muy corta')
+];  
 
 function validator(req: Request, res: Response, next: NextFunction) {
   const errors = validationResult(req);
@@ -18,5 +18,3 @@ export {
   validatorParams,
   validator
 };
-
-
