@@ -1,6 +1,6 @@
 import { Response, Request } from "express";
 import { Gets } from "../../repository/orderDetailsRepository/GetsOrderDetails.Repository";
-import { Existences } from "../../helpers/validateExisences/Existences.Helper";
+import { Existences } from '../../helpers/validateExisences/Existences.helper';
 import { validateToken } from "../../middleware/ValidateToken/ValidateToken";
 
 

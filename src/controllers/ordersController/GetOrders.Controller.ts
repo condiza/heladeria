@@ -1,6 +1,6 @@
 import { Response,Request } from "express";
 import { Gets } from "../../repository/ordersRepository/GetsOrders.Repository";
-import { Existences } from "../../helpers/validateExisences/Existences.Helper";
+import { Existences } from '../../helpers/validateExisences/Existences.helper';
 
 export async function getOrders(req:Request, res:Response): Promise <Response> {
     try {
